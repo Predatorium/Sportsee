@@ -1,0 +1,24 @@
+Body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  flex: 1;
+  padding: 2.2rem 10%;
+  gap: 6.5rem;
+  background-color: #F2F3FF;
+}
