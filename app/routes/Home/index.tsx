@@ -51,6 +51,7 @@ export default function Home() {
       <div className="image-side">
         <img src="/images/background-home.jpg" alt="Sportsee" />
       </div>
+      <p className="slogan">Analysez vos performances en un clin d’œil, suivez vos progrès et atteignez vos objectifs.</p>
     </div>
   );
 }

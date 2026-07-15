@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.chart-heartRate .chart-title {
+    color: #F4320B;
+}
+
+.heartRate-chart-legend {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0.7rem 0 0 0;
+}
+
+.heartRate-chart-legend .min,
+.heartRate-chart-legend .max,
+.heartRate-chart-legend .average {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.heartRate-chart-legend > * > .chart-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+}
+
+.min .chart-dot {
+    background-color: #FCC1B6;
+}
+
+.max .chart-dot {
+    background-color: #F4320B;
+}
+
+.average .chart-dot {
+    background-color: #0B23F4;
+}

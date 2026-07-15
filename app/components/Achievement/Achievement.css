@@ -1,0 +1,40 @@
+.distance-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background-color: white;
+    gap: 2rem;
+}
+
+.distance-info .text{
+    font-family: 'Inter';
+    font-size: 0.9rem;
+    color: #707070;
+}
+
+.distance-value {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    height: 5.6rem;
+    border-radius: 10px;
+    padding: 1.75rem;
+    gap: 1.4rem;
+    background-color: #0B23F4;
+}
+
+.kilometre {
+    height: 2.1rem;
+    width: 2.1rem;
+}
+
+.stat {
+    font-family: 'Inter';
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: white;
+}

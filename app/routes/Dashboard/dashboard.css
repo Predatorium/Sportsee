@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.dashboard {
+    padding: 0 5.5%;
+}
+
+.dashboard-perf {
+    font-family: 'Inter';
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #111111;
+    padding-top: 5rem;
+}
+
+.dashboard-graph {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    gap: 2rem;
+    padding: 1rem 0 5rem 0;
+}
+
+.graph-distance {
+    width: 40%;
+}
+
+.graph-bpm {
+    flex: 1;
+}
+
+.header-week-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.header-week-stat .title {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #111111;
+}
+
+.header-week-stat .subtitle {
+    font-family: 'Inter';
+    font-weight: 500;
+    color: #707070;
+}
+
+@media (max-width: 1200px) {
+    .dashboard {
+        padding: 0 2%;
+    }
+}

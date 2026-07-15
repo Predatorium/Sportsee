@@ -7,18 +7,25 @@ Body {
 .layout {
   display: flex;
   flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
   width: 100%;
   min-height: 100vh;
+  background-color: #F2F3FF;
 }
 
 .layout-container {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 100%;
+  width: 80%;
   flex: 1;
-  padding: 2.2rem 10%;
+  padding: 2.2rem 0;
   gap: 6.5rem;
-  background-color: #F2F3FF;
+}
+
+@media (max-width: 1300px) {
+    .layout-container {
+      width: 90%;
+    }
 }

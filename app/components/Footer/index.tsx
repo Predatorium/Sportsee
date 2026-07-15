@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer-right">
             <p>Conditions générales</p>
             <p>Contact</p>
-            <Logo />
+            <img src="/images/Logo.svg" alt="Logo Sportsee" className="logo"/>
         </div>
     </footer>
   )
