@@ -33,7 +33,6 @@ export default function WeeklyDistanceChart() {
           <p className="chart-footer-text">Km</p>
         </div>
       </ChartHeader>
-
     </div>
   );
 }

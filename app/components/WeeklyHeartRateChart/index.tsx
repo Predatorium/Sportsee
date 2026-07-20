@@ -20,7 +20,7 @@ export default function HeartRateChart() {
         canGoForward={canGoForward}
       >
         <ResponsiveContainer width="100%" height={307}>
-          <ComposedChart data={data} margin={{ top: 10, right: 10, left: -45, bottom: 0 }}>
+          <ComposedChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
             <CartesianGrid vertical={false} strokeDasharray="3 3" />
             <XAxis dataKey="day" tickLine={false} />
             <YAxis tickLine={false} />

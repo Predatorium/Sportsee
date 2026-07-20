@@ -1,4 +1,4 @@
-import { LabelList, Pie, PieChart, ResponsiveContainer, Sector, type PieSectorDataItem } from 'recharts';
+import { Pie, PieChart, ResponsiveContainer, Sector, type PieSectorDataItem } from 'recharts';
 import { useActivity } from '~/context/ActivityContext';
 import { getCurrentWeekStats } from "~/services/aggregateData";
 import './RunningWeekGoal.css';
@@ -11,7 +11,7 @@ function renderSector(props: PieSectorDataItem & { index?: number }) {
 }
 
 function renderLabel(props: any) {
-        const { cx, cy, midAngle, outerRadius, value, index } = props;
+    const { cx, cy, midAngle, outerRadius, value, index } = props;
     const RADIAN = Math.PI / 180;
     const radius = outerRadius + 20;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
@@ -67,7 +67,7 @@ export default function RunningWeekGoal() {
                     <p className='title'>Distance</p>
                     <p className='content'>
                         <span className="highlight">{week.distance} </span> 
-                        minute{Number(week.distance) > 1 ? 's' : ''}
+                        kilomètre{Number(week.distance) > 1 ? 's' : ''}
                     </p>
                 </div>
             </div>

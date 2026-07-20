@@ -79,7 +79,10 @@ type WeekActivity = {
 export function getCurrentWeekStats(sessions: Session[]): WeekActivity {
 
   const today = new Date();
-  const monday = getMondayOfWeek(today);
+  const targetDate = new Date(today);
+  targetDate.setDate(today.getDate() - 7);
+
+  const monday = getMondayOfWeek(targetDate);
   const sunday = new Date(monday);
   sunday.setDate(monday.getDate() + 6);
   sunday.setHours(23, 59, 59, 999);

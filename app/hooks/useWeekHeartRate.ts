@@ -4,7 +4,7 @@ import { formatDate, formatDateFrWithoutYear, getMondayOfWeek } from "~/services
 import { aggregateHeartRateByDay, aggregateKmByWeek } from "~/services/aggregateData";
 
 export function useWeekHeartRate(sessions: Session[], daysPerPage = 7) {
-    const [weekOffset, setWeekOffset] = useState(1);
+    const [weekOffset, setWeekOffset] = useState(0);
 
     const today = new Date();
     const targetDate = new Date(today);

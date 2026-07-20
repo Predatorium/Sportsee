@@ -5,11 +5,21 @@ import { getDateOfDay } from "~/services/dateUtils";
 import { UserProvider } from "~/context/UserContext";
 import { ActivityProvider } from "~/context/ActivityContext";
 import { Outlet, redirect } from "react-router";
+import { mockUserActivity } from "~/mocks/userActivity.mock";
+import { mockUserInfo } from "~/mocks/userInfo.mock";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import "./Layout.css";
+import config from "~/config/config";
 
 export async function loader({ request }: Route.LoaderArgs) {
+  if (config.useMocks === true) {
+    return {
+      activity: mockUserActivity,
+      userInfo: mockUserInfo,
+    };
+  }
+
     const cookie = request.headers.get("Cookie");
     const token = getTokenFromCookie(cookie);
 

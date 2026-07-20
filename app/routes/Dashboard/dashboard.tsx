@@ -1,4 +1,3 @@
-import type { Route } from "../Dashboard/+types/dashboard";
 import WeeklyDistanceChart from "~/components/WeeklyDistanceChart";
 import WeeklyHeartRateChart from "~/components/WeeklyHeartRateChart";
 import HeaderProfile from "~/components/HeaderProfile";
@@ -8,7 +7,6 @@ import { formatDateReverse, getMondayOfWeek } from "~/services/dateUtils";
 import RunningWeekGoal from "~/components/RunningWeekGoal";
 
 export default function Dashboard() {
-    
     const today = new Date();    
     const monday = getMondayOfWeek(today);
     const sunday = new Date(monday);

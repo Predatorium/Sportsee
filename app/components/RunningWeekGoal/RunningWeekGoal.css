@@ -53,15 +53,15 @@
     color: #707070;
 }
 
-.stats {
+.running-goal .stats {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     flex: 1;
 }
 
-.stats .duration,
-.stats .distance {
+.running-goal .stats .duration,
+.running-goal .stats .distance {
     display: flex;
     flex-direction: column;
     padding: 1.2rem 1.9rem;
@@ -70,15 +70,15 @@
     gap: 1.15rem;
 }
 
-.stats .duration .title,
-.stats .distance .title {
+.running-goal .stats .duration .title,
+.running-goal .stats .distance .title {
     font-family: 'Inter';
     font-size: 0.8rem;
     color: #707070;
 }
 
-.stats .duration .content,
-.stats .distance .content {
+.running-goal .stats .duration .content,
+.running-goal .stats .distance .content {
     font-family: 'Inter';
 }
 
