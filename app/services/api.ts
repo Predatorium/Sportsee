@@ -1,7 +1,8 @@
-const API_URL = "http://localhost:8000";
+import config from "~/config/config";
+
 
 export async function login(username: string, password: string) {
-    const res = await fetch(`${API_URL}/api/login`, 
+    const res = await fetch(`${config.apiUrl}/api/login`, 
     {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -17,7 +18,7 @@ export async function login(username: string, password: string) {
 }
 
 export async function getUserInfo(token: string) {
-    const res = await fetch(`${API_URL}/api/user-info`, 
+    const res = await fetch(`${config.apiUrl}/api/user-info`, 
     {
         headers: { Authorization: `Bearer ${token}` },
     });
@@ -32,8 +33,10 @@ export async function getUserInfo(token: string) {
 
 export async function getUserActivity(token: string, startWeek: string, endWeek: string) {
     const res = await fetch(
-        `${API_URL}/api/user-activity?startWeek=${startWeek}&endWeek=${endWeek}`,
-        { headers: { Authorization: `Bearer ${token}` } }
+        `${config.apiUrl}/api/user-activity?startWeek=${startWeek}&endWeek=${endWeek}`,
+        { 
+            headers: { Authorization: `Bearer ${token}` } 
+        }
     );
 
     if (!res.ok)

@@ -3,11 +3,24 @@ import type { Route } from "../Home/+types/index";
 import { login } from "../../services/api";
 import Logo from "../../components/Logo";
 import "./Home.css";
+import config from "~/config/config";
 
 export async function action({ request }: Route.ActionArgs) {
   const formData = await request.formData();
   const username = formData.get("username") as string;
   const password = formData.get("password") as string;
+
+  if (config.useMocks === true) {
+    try {
+      if (username !== config.pseudo || password !== config.mdp){
+        throw ("");
+      }
+      return redirect(`/dashboard/${0}`)
+    }
+    catch {
+      return { error: "Identifiants invalides" };
+    }
+  }
 
   try {
     const { token, userId } = await login(username, password);
