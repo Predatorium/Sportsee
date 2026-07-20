@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #F2F3FF;
+  padding: 10rem 10%;
+  gap: 1rem;
+}
+
+.error {
+    font-family: 'Inter';
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #101010;
+}
+
+.content {
+    font-family: 'Inter';
+}
+
+.home-link {
+    font-family: 'Inter';
+    color: unset;
+}
+
+.home-link:hover {
+    color: #0B23F4;
+}

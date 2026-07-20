@@ -20,20 +20,20 @@ export async function loader({ request }: Route.LoaderArgs) {
     };
   }
 
-    const cookie = request.headers.get("Cookie");
-    const token = getTokenFromCookie(cookie);
+  const cookie = request.headers.get("Cookie");
+  const token = getTokenFromCookie(cookie);
 
-    if (!token) {
-        throw redirect("/");
-    }
+  if (!token) {
+    throw redirect("/");
+  }
 
-    try {
-        const userInfo = await getUserInfo(token);
-        const activity = await getUserActivity(token, userInfo.profile.createdAt, getDateOfDay());
-        return { userInfo, activity };
-    } catch (error) {
-        throw redirect("/");
-    }
+  try {
+    const userInfo = await getUserInfo(token);
+    const activity = await getUserActivity(token, userInfo.profile.createdAt, getDateOfDay());
+    return { userInfo, activity };
+  } catch (error) {
+    throw redirect("/");
+  }
 }
 
 export default function DashboardLayout({ loaderData }: Route.ComponentProps) {

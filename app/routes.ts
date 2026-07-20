@@ -5,8 +5,8 @@ export default [
     route("logout", "routes/Logout/index.tsx"),
 
     layout("routes/Dashboard/layout.tsx", [
-        route("dashboard/:userId", "routes/Dashboard/dashboard.tsx"),
-        route("profile/:userId", "routes/Dashboard/profile.tsx"),
+        route("dashboard", "routes/Dashboard/dashboard.tsx"),
+        route("profile", "routes/Dashboard/profile.tsx"),
     ]),
 
     route("*", "routes/NotFound/index.tsx"),

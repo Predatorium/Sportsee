@@ -1,9 +1,26 @@
-import { Form, Link, redirect, useActionData } from "react-router";
+import { Form, Link, redirect, useActionData, type LoaderFunctionArgs } from "react-router";
 import type { Route } from "../Home/+types/index";
-import { login } from "../../services/api";
+import { getUserInfo, login } from "../../services/api";
 import Logo from "../../components/Logo";
 import "./Home.css";
 import config from "~/config/config";
+import { getTokenFromCookie } from "~/services/auth";
+
+export async function loader({ request }: LoaderFunctionArgs) {
+  const cookieHeader = request.headers.get("Cookie");
+  const token = getTokenFromCookie(cookieHeader); // ta fonction utilitaire
+
+  if (token) {
+    // Optionnel mais recommandé : vérifier que le token est bien valide
+    // (pas juste présent) en le décodant / vérifiant son expiration
+    const isValid = await getUserInfo(token);
+    if (isValid) {
+      return redirect("/dashboard");
+    }
+  }
+
+  return null; // pas de token valide → on reste sur la page d'accueil
+}
 
 export async function action({ request }: Route.ActionArgs) {
   const formData = await request.formData();
@@ -15,7 +32,7 @@ export async function action({ request }: Route.ActionArgs) {
       if (username !== config.pseudo || password !== config.mdp){
         throw ("");
       }
-      return redirect(`/dashboard/${0}`)
+      return redirect(`/dashboard`)
     }
     catch {
       return { error: "Identifiants invalides" };
@@ -25,7 +42,7 @@ export async function action({ request }: Route.ActionArgs) {
   try {
     const { token, userId } = await login(username, password);
   
-    return redirect(`/dashboard/${userId}`, {
+    return redirect(`/dashboard`, {
       headers: {
         "Set-Cookie": `token=${token}; Path=/; HttpOnly; SameSite=Lax`,
       },
